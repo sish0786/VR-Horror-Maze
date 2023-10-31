@@ -21,7 +21,7 @@ public class FlashLight : MonoBehaviour
         spotlight = GetComponentInChildren<Light>();
 
         interactable  = GetComponent<XRGrabInteractable>();
-        interactable.selectEntered.AddListener(OnGrab);
+        interactable.activated.AddListener(OnGrab);
         switchSound = GetComponentInChildren<AudioSource>();
 
         // spotlight.enabled = false;
@@ -30,8 +30,9 @@ public class FlashLight : MonoBehaviour
         // isFlashlightOn = false;
     }
 
-    public void OnGrab(SelectEnterEventArgs args)
+    public void OnGrab(ActivateEventArgs args)
     {
+        Debug.Log("Entered Ongrab");
         if (!isFlashlightOn)
         {
             TurnOnFlashlight();
@@ -44,7 +45,6 @@ public class FlashLight : MonoBehaviour
 
     private void TurnOnFlashlight()
     {
-       
         switchSound.Play();
         spotlight.enabled = true;
         lens.EnableKeyword("_EMISSION");
@@ -59,6 +59,7 @@ public class FlashLight : MonoBehaviour
         lens.DisableKeyword("_EMISSION");
         bulb.DisableKeyword("_EMISSION");
         isFlashlightOn = false;
+ 
     }
 
 }
