@@ -19,6 +19,10 @@ public class DungeonGenerator : MonoBehaviour
     [System.Serializable]
     public class Rule
     {
+        public int maxSpawnCount = int.MaxValue;
+
+        [System.NonSerialized]
+        public int currentSpawnCount = 0;
         public GameObject room;
         public Vector2Int minPosition;
         public Vector2Int maxPosition;
@@ -26,6 +30,10 @@ public class DungeonGenerator : MonoBehaviour
         public bool obligatory;
         public bool trigger;
 
+        public bool CanSpawnMore()
+        {
+            return maxSpawnCount == -1 || currentSpawnCount < maxSpawnCount;
+        }
         public int ProbabilityOfSpawning(int x, int y)
         {
             // 0 - cannot spawn 1 - can spawn 2 - HAS to spawn
@@ -76,6 +84,10 @@ public class DungeonGenerator : MonoBehaviour
 
                     for (int k = 0; k < rooms.Length; k++)
                     {
+                        if(!rooms[k].CanSpawnMore()){
+                            continue;
+                        }
+
                         int p = rooms[k].ProbabilityOfSpawning(i, j);
 
                         if(p == 2)
@@ -101,6 +113,7 @@ public class DungeonGenerator : MonoBehaviour
                     }
 
                     var newRoom = Instantiate(rooms[randomRoom].room, new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+                    rooms[randomRoom].currentSpawnCount++;
                     // var newRoom = Instantiate(rooms[randomRoom], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                     bool lightOn = i==0 && j==0 || i==size.x-1&&j==size.y-1 || Random.value > 0.5;
                     newRoom.UpdateRoom(board[(i+j*size.x)].status, lightOn, zombie);

@@ -829,29 +829,40 @@ MonoBehaviour:
   size: {x: 10, y: 10}
   startPos: 0
   rooms:
-  - room: {fileID: 6969672134069201492, guid: df4024ff6b39940ef92b35f1c297d95f, type: 3}
+  - maxSpawnCount: 100
+    room: {fileID: 6969672134069201492, guid: df4024ff6b39940ef92b35f1c297d95f, type: 3}
     minPosition: {x: 0, y: 0}
     maxPosition: {x: 0, y: 0}
     obligatory: 1
     trigger: 0
-  - room: {fileID: 5383082505050117409, guid: debed1eab204d4475b8ada0eeb55a3fc, type: 3}
+  - maxSpawnCount: 100
+    room: {fileID: 5383082505050117409, guid: debed1eab204d4475b8ada0eeb55a3fc, type: 3}
     minPosition: {x: 1, y: 1}
     maxPosition: {x: 8, y: 8}
     obligatory: 0
     trigger: 0
-  - room: {fileID: 5383082505050117409, guid: debed1eab204d4475b8ada0eeb55a3fc, type: 3}
+  - maxSpawnCount: 100
+    room: {fileID: 5383082505050117409, guid: debed1eab204d4475b8ada0eeb55a3fc, type: 3}
     minPosition: {x: 1, y: 1}
     maxPosition: {x: 8, y: 8}
     obligatory: 0
     trigger: 0
-  - room: {fileID: 6729028338625543894, guid: 88d7d88621348fd48b8e1e09e017f5c2, type: 3}
+  - maxSpawnCount: 100
+    room: {fileID: 6729028338625543894, guid: 88d7d88621348fd48b8e1e09e017f5c2, type: 3}
     minPosition: {x: 1, y: 1}
     maxPosition: {x: 8, y: 8}
     obligatory: 0
     trigger: 0
-  - room: {fileID: 6969672134069201492, guid: df4024ff6b39940ef92b35f1c297d95f, type: 3}
+  - maxSpawnCount: 100
+    room: {fileID: 6969672134069201492, guid: df4024ff6b39940ef92b35f1c297d95f, type: 3}
     minPosition: {x: 9, y: 9}
     maxPosition: {x: 9, y: 9}
+    obligatory: 1
+    trigger: 0
+  - maxSpawnCount: 1
+    room: {fileID: 6729028338625543894, guid: 733965b7ca5e87f4b8cd0bfbde709509, type: 3}
+    minPosition: {x: 1, y: 1}
+    maxPosition: {x: 3, y: 3}
     obligatory: 1
     trigger: 0
   offset: {x: 6, y: 6}
