@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class JumpscareTrigger : MonoBehaviour
@@ -20,15 +21,19 @@ public class JumpscareTrigger : MonoBehaviour
         if (other.CompareTag("Player") && !hasTriggered)
         {
             hasTriggered = true;
-            ActivateGhost();
+            // Activate ghost after 3 seconds
+            StartCoroutine(ActivateGhostAfterDelay(1.5f));
         }
     }
 
-    private void ActivateGhost()
+    private IEnumerator ActivateGhostAfterDelay(float delay)
     {
+        yield return new WaitForSeconds(delay);
+
         ghost.SetActive(true);
+
         // Start audio playback
-        if(jumpscareAudio != null && !jumpscareAudio.isPlaying)
+        if (jumpscareAudio != null && !jumpscareAudio.isPlaying)
         {
             jumpscareAudio.Play();
         }
@@ -36,7 +41,7 @@ public class JumpscareTrigger : MonoBehaviour
         StartCoroutine(MoveGhost());
     }
 
-    private System.Collections.IEnumerator MoveGhost()
+    private IEnumerator MoveGhost()
     {
         while (Vector3.Distance(ghost.transform.position, playerFace.position) > 0.5f) // Adjust the distance as needed
         {
