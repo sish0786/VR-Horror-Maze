@@ -9,13 +9,19 @@ public class RoomBehaviour : MonoBehaviour
     public GameObject pointLight;
     public Renderer lightBulb;
     public Material onLight, offLight;
+
+    public GameObject ScaryVoiceTrigger;
     public SummonZombie summonZombie;
 
-    public void UpdateRoom(bool[] status, bool lightStatus, GameObject zombie)
+    public void UpdateRoom(bool[] status, bool lightStatus, GameObject zombie, bool scaryVoice)
     {
         if(summonZombie != null)
         {
             summonZombie.zombie = zombie;
+        }
+
+        if(scaryVoice && ScaryVoiceTrigger){
+            ScaryVoiceTrigger.SetActive(true);
         }
 
         if (lightStatus) {

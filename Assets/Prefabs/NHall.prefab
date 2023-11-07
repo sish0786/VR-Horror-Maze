@@ -2734,6 +2734,7 @@ MonoBehaviour:
   lightBulb: {fileID: 71109927489127365}
   onLight: {fileID: 2100000, guid: 0529c95baad5a264787a242f949623c9, type: 2}
   offLight: {fileID: 2100000, guid: c29afa810c2224792a5f27af17429f8f, type: 2}
+  ScaryVoiceTrigger: {fileID: 8704533343777940478}
   summonZombie: {fileID: 0}
 --- !u!1 &5383928727768491698
 GameObject:
@@ -4719,7 +4720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7105587509611517646
 Transform:
   m_ObjectHideFlags: 0

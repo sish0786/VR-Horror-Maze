@@ -830,7 +830,7 @@ MonoBehaviour:
   startPos: 0
   rooms:
   - maxSpawnCount: 100
-    room: {fileID: 6969672134069201492, guid: df4024ff6b39940ef92b35f1c297d95f, type: 3}
+    room: {fileID: 6969672134069201492, guid: e7709a5072d77f94e8fc80888d636a97, type: 3}
     minPosition: {x: 0, y: 0}
     maxPosition: {x: 0, y: 0}
     obligatory: 1
@@ -854,15 +854,15 @@ MonoBehaviour:
     obligatory: 0
     trigger: 0
   - maxSpawnCount: 100
-    room: {fileID: 6969672134069201492, guid: df4024ff6b39940ef92b35f1c297d95f, type: 3}
+    room: {fileID: 6969672134069201492, guid: e7709a5072d77f94e8fc80888d636a97, type: 3}
     minPosition: {x: 9, y: 9}
     maxPosition: {x: 9, y: 9}
     obligatory: 1
     trigger: 0
   - maxSpawnCount: 1
-    room: {fileID: 6729028338625543894, guid: 88d7d88621348fd48b8e1e09e017f5c2, type: 3}
+    room: {fileID: 6729028338625543894, guid: b49874e67e607a44ebb7ea00dcf7e964, type: 3}
     minPosition: {x: 1, y: 1}
-    maxPosition: {x: 3, y: 3}
+    maxPosition: {x: 1, y: 1}
     obligatory: 1
     trigger: 0
   offset: {x: 6, y: 6}

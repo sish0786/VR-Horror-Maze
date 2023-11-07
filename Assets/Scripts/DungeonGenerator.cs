@@ -116,7 +116,8 @@ public class DungeonGenerator : MonoBehaviour
                     rooms[randomRoom].currentSpawnCount++;
                     // var newRoom = Instantiate(rooms[randomRoom], new Vector3(i * offset.x, 0, -j * offset.y), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                     bool lightOn = i==0 && j==0 || i==size.x-1&&j==size.y-1 || Random.value > 0.5;
-                    newRoom.UpdateRoom(board[(i+j*size.x)].status, lightOn, zombie);
+                    bool scaryVoice = Random.Range(0, 10) < 5;
+                    newRoom.UpdateRoom(board[(i+j*size.x)].status, lightOn, zombie, scaryVoice);
                     newRoom.name += " " + i + "-" + j;
 
                     // navMeshSurfaces = newRoom.GetComponentsInChildren<NavMeshSurface>();
