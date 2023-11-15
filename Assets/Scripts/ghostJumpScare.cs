@@ -3,25 +3,23 @@ using UnityEngine;
 
 public class JumpscareTrigger : MonoBehaviour
 {
-    public GameObject ghost; // Drag your ghost GameObject here
-    public AudioSource jumpscareAudio; // Drag your AudioSource component here
+    public GameObject ghost; 
+    public AudioSource jumpscareAudio; 
     public float ghostSpeed = 5f; // Speed at which ghost moves towards player
     private Transform playerFace; // Player's Camera (face) Transform component
     private bool hasTriggered = false; // To ensure the jumpscare happens only once
 
     private void Start()
     {
-        // Using main camera as a reference for the player's face in XR
         playerFace = Camera.main.transform;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the player entered the trigger and the jumpscare hasn't been triggered yet
         if (other.CompareTag("Player") && !hasTriggered)
         {
             hasTriggered = true;
-            // Activate ghost after 3 seconds
+            // Activate ghost after 1.5 seconds
             StartCoroutine(ActivateGhostAfterDelay(1.5f));
         }
     }
@@ -50,7 +48,7 @@ public class JumpscareTrigger : MonoBehaviour
             yield return null;
         }
 
-        // Optional: Deactivate ghost after it reaches the player's face or after some time
+      // Deactivate ghost after it reaches the player's face or after some time
         ghost.SetActive(false);
     }
 }

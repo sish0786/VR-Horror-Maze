@@ -33,9 +33,6 @@ public class PlayRandomAudioOnProximity : MonoBehaviour
 
         // Disable the collider after playing
         sphereCollider.enabled = false;
-
-        // OR, if you want to completely destroy the collider, uncomment the line below:
-        // Destroy(sphereCollider);
     }
 
     // This function is called when another collider enters the trigger zone of this GameObject
