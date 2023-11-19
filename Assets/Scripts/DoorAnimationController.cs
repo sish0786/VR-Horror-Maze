@@ -15,6 +15,7 @@ public class DoorAnimationController : MonoBehaviour
     // This function will be called to toggle the door animation
     public void ToggleDoorAnimation()
     {
+        Debug.Log("TriggeredAction Door");
         isOpen = !isOpen;
 
         doorAnimator.SetTrigger("toggleDoor");
