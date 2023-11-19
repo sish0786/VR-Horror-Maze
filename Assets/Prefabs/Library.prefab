@@ -8574,11 +8574,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3174718023700846030, guid: 1a0740b899aae9e4ebe071ce465eb6c0, type: 3}
       propertyPath: m_Range
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3174718023700846030, guid: 1a0740b899aae9e4ebe071ce465eb6c0, type: 3}
       propertyPath: m_Intensity
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3174718023700846030, guid: 1a0740b899aae9e4ebe071ce465eb6c0, type: 3}
       propertyPath: m_Lightmapping
@@ -9888,11 +9888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6978486752775744380, guid: c1b34e0edcfd11f4bb538c6e82d260eb, type: 3}
       propertyPath: m_Range
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6978486752775744380, guid: c1b34e0edcfd11f4bb538c6e82d260eb, type: 3}
       propertyPath: m_Intensity
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6978486752775744380, guid: c1b34e0edcfd11f4bb538c6e82d260eb, type: 3}
       propertyPath: m_Lightmapping
