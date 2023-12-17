@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - LeftWall
+  - DownWall
+  - RightWall
+  - UpWall
+  - Axe
+  - Door
+  - Torchlight
+  - Monster
+  - Destination
+  - invertWall
   layers:
   - Default
   - TransparentFX
@@ -14,10 +24,10 @@ TagManager:
   - UI
   - Player
   - Interactable
-  - 
-  - 
-  - 
-  - 
+  - IgnoreFlash
+  - Post Processing
+  - Obstacles
+  - Drawer
   - 
   - 
   - 

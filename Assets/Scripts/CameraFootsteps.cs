@@ -55,4 +55,8 @@ public class CameraFootsteps : MonoBehaviour
             footstepAudioSource.clip = footstepClip; // Reset the clip to footstep after scared sound stops
         }
     }
+
+    public void TriggerScared(){
+        isScared = true;
+    }
 }

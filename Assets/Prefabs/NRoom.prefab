@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 4129987223805392086}
   - component: {fileID: 2665601750209605294}
   - component: {fileID: 1784781932738045634}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 3651560924233807076}
   - component: {fileID: 6399400113108047699}
   - component: {fileID: 584919246819917134}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +623,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422611164364453541}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -666,6 +666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpenClip: {fileID: 8300000, guid: 5f81cabf59f72ad469cc5da0e03112ff, type: 3}
   doorCloseClip: {fileID: 8300000, guid: 4ae37021d22df7b4184f6aa86b11f132, type: 3}
+  triggerVariable: toggleDoor
 --- !u!82 &7358091449110812421
 AudioSource:
   m_ObjectHideFlags: 0
@@ -687,7 +688,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -1194,7 +1195,7 @@ GameObject:
   - component: {fileID: 2927071717896094065}
   - component: {fileID: 3833051383267810057}
   - component: {fileID: 12071166702791449}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -1321,7 +1322,7 @@ GameObject:
   - component: {fileID: 4251045689557527164}
   - component: {fileID: 5808922957405833675}
   - component: {fileID: 3079986979148002791}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1791,7 +1792,7 @@ GameObject:
   - component: {fileID: 8013468317511368545}
   - component: {fileID: 915076532626617815}
   - component: {fileID: 2113663296642687120}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1910,7 +1911,7 @@ GameObject:
   - component: {fileID: 1459756676877207663}
   - component: {fileID: 715139001541988887}
   - component: {fileID: 8213766284357439028}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2142,8 +2143,7 @@ GameObject:
   - component: {fileID: 9171208411771223019}
   - component: {fileID: 399203825575588983}
   - component: {fileID: 7102116184051370835}
-  - component: {fileID: 4052284415975889672}
-  - component: {fileID: 3993634503613658849}
+  - component: {fileID: 39271130919157641}
   m_Layer: 0
   m_Name: Knob
   m_TagString: Untagged
@@ -2214,7 +2214,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4052284415975889672
+--- !u!114 &39271130919157641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2223,7 +2223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3118422176019514111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -2265,7 +2265,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6679898680306281629}
+        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
+        m_MethodName: ToggleDoorAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -2283,19 +2295,7 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6679898680306281629}
-        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
-        m_MethodName: ToggleDoorAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -2329,73 +2329,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
---- !u!114 &3993634503613658849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3118422176019514111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PermittedDisplacementAxes: -1
-  m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowTwoHandedScaling: 0
-  m_ThresholdMoveRatioForScale: 0.05
-  m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
-  m_ScaleMultiplier: 0.25
 --- !u!1 &3136585348342392706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,7 +2766,7 @@ GameObject:
   - component: {fileID: 1995561740347467836}
   - component: {fileID: 8757942226732485318}
   - component: {fileID: 6713216294956956287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2973,7 +2906,7 @@ GameObject:
   - component: {fileID: 683433677913348416}
   - component: {fileID: 1500469002989011768}
   - component: {fileID: 9085188692892153379}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -3099,8 +3032,7 @@ GameObject:
   - component: {fileID: 3202597124129453312}
   - component: {fileID: 7060683797128430274}
   - component: {fileID: 4334847925340983240}
-  - component: {fileID: 2054779418461437950}
-  - component: {fileID: 8915108804935834094}
+  - component: {fileID: 2235203039837104492}
   m_Layer: 0
   m_Name: Knob
   m_TagString: Untagged
@@ -3171,7 +3103,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2054779418461437950
+--- !u!114 &2235203039837104492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3180,7 +3112,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4130870137533286420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -3222,7 +3154,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8009351043743912939}
+        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
+        m_MethodName: ToggleDoorAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -3240,19 +3184,7 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8009351043743912939}
-        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
-        m_MethodName: ToggleDoorAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -3286,73 +3218,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
---- !u!114 &8915108804935834094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4130870137533286420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PermittedDisplacementAxes: -1
-  m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowTwoHandedScaling: 0
-  m_ThresholdMoveRatioForScale: 0.05
-  m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
-  m_ScaleMultiplier: 0.25
 --- !u!1 &4147904970669799084
 GameObject:
   m_ObjectHideFlags: 0
@@ -3366,7 +3231,7 @@ GameObject:
   - component: {fileID: 228786349050526738}
   - component: {fileID: 1745391505046336085}
   - component: {fileID: 8359890691965497547}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3521,7 +3386,7 @@ GameObject:
   - component: {fileID: 1405827441450537957}
   - component: {fileID: 5380154113192555608}
   - component: {fileID: 6906043688931148297}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3662,7 +3527,7 @@ GameObject:
   - component: {fileID: 7877088458287237977}
   - component: {fileID: 2905125642315443968}
   - component: {fileID: 8157837758032241004}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3920,7 +3785,7 @@ GameObject:
   - component: {fileID: 8492913942633280602}
   - component: {fileID: 7526170214907194914}
   - component: {fileID: 5081294772177984703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4047,7 +3912,7 @@ GameObject:
   - component: {fileID: 594679632460038313}
   - component: {fileID: 8255479273948528701}
   - component: {fileID: 5584670434054025337}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RightEntrance
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4473,7 +4338,7 @@ GameObject:
   - component: {fileID: 1320696853581161765}
   - component: {fileID: 7531687201488496049}
   - component: {fileID: 3973832287933066113}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownEntrance
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -4742,7 +4607,7 @@ GameObject:
   - component: {fileID: 7606189589876394583}
   - component: {fileID: 8367735340868177967}
   - component: {fileID: 5717561835406525942}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DownWall
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -5356,6 +5221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpenClip: {fileID: 8300000, guid: 5f81cabf59f72ad469cc5da0e03112ff, type: 3}
   doorCloseClip: {fileID: 8300000, guid: 4ae37021d22df7b4184f6aa86b11f132, type: 3}
+  triggerVariable: toggleDoor
 --- !u!82 &6681923353647551096
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5377,7 +5243,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5519,8 +5385,7 @@ GameObject:
   - component: {fileID: 6426545301706871439}
   - component: {fileID: 3236865943733729459}
   - component: {fileID: 4405127336460713784}
-  - component: {fileID: 5855545478684762733}
-  - component: {fileID: 483303347861244971}
+  - component: {fileID: 3374115855786547034}
   m_Layer: 0
   m_Name: Knob
   m_TagString: Untagged
@@ -5591,7 +5456,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5855545478684762733
+--- !u!114 &3374115855786547034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5600,7 +5465,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7015349945804547478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -5642,7 +5507,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1665723082145445227}
+        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
+        m_MethodName: ToggleDoorAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -5660,19 +5537,7 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1665723082145445227}
-        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
-        m_MethodName: ToggleDoorAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -5706,73 +5571,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
---- !u!114 &483303347861244971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7015349945804547478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PermittedDisplacementAxes: -1
-  m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowTwoHandedScaling: 0
-  m_ThresholdMoveRatioForScale: 0.05
-  m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
-  m_ScaleMultiplier: 0.25
 --- !u!1 &7019057040850943443
 GameObject:
   m_ObjectHideFlags: 0
@@ -6025,6 +5823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpenClip: {fileID: 8300000, guid: 5f81cabf59f72ad469cc5da0e03112ff, type: 3}
   doorCloseClip: {fileID: 8300000, guid: 4ae37021d22df7b4184f6aa86b11f132, type: 3}
+  triggerVariable: toggleDoor
 --- !u!82 &5266888471345555440
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6046,7 +5845,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -6431,7 +6230,7 @@ GameObject:
   - component: {fileID: 5093710711503535481}
   - component: {fileID: 7060098141022470062}
   - component: {fileID: 3610325173486044726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6709,7 +6508,7 @@ GameObject:
   - component: {fileID: 2622195623685409715}
   - component: {fileID: 8095192940506768531}
   - component: {fileID: 2678112717310193445}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6826,8 +6625,7 @@ GameObject:
   - component: {fileID: 1311320066850323162}
   - component: {fileID: 2675082948173955603}
   - component: {fileID: 2440203199969188778}
-  - component: {fileID: 7693786155158264687}
-  - component: {fileID: 3446441832925266494}
+  - component: {fileID: 8409221867111670364}
   m_Layer: 0
   m_Name: Knob
   m_TagString: Untagged
@@ -6898,7 +6696,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7693786155158264687
+--- !u!114 &8409221867111670364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6907,7 +6705,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8330722786621270574}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -6949,7 +6747,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1015454124185952497}
+        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
+        m_MethodName: ToggleDoorAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -6967,19 +6777,7 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1015454124185952497}
-        m_TargetAssemblyTypeName: DoorAnimationController, Assembly-CSharp
-        m_MethodName: ToggleDoorAnimation
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -7013,73 +6811,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
-  m_MatchAttachPosition: 1
-  m_MatchAttachRotation: 1
-  m_SnapToColliderVolume: 1
-  m_ReinitializeDynamicAttachEverySingleGrab: 1
-  m_AttachEaseInTime: 0.15
-  m_MovementType: 2
-  m_VelocityDamping: 1
-  m_VelocityScale: 1
-  m_AngularVelocityDamping: 1
-  m_AngularVelocityScale: 1
-  m_TrackPosition: 1
-  m_SmoothPosition: 0
-  m_SmoothPositionAmount: 5
-  m_TightenPosition: 0.5
-  m_TrackRotation: 1
-  m_SmoothRotation: 0
-  m_SmoothRotationAmount: 5
-  m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
-  m_ThrowSmoothingCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_ThrowVelocityScale: 1.5
-  m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
-  m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
---- !u!114 &3446441832925266494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8330722786621270574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0a1302d0d134fa8a2a5b3bf4aec3c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PermittedDisplacementAxes: -1
-  m_ConstrainedAxisDisplacementMode: 1
-  m_TwoHandedRotationMode: 1
-  m_AllowTwoHandedScaling: 0
-  m_ThresholdMoveRatioForScale: 0.05
-  m_ClampScaling: 1
-  m_MinimumScaleRatio: 0.25
-  m_MaximumScaleRatio: 2
-  m_ScaleMultiplier: 0.25
 --- !u!1 &8340816844017432118
 GameObject:
   m_ObjectHideFlags: 0
@@ -7094,7 +6825,7 @@ GameObject:
   - component: {fileID: 6895686652703010327}
   - component: {fileID: 8092941223666749368}
   - component: {fileID: 3714459866488189453}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7234,7 +6965,7 @@ GameObject:
   - component: {fileID: 5737697577717202663}
   - component: {fileID: 5911687479061755485}
   - component: {fileID: 3572043468982993253}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7373,14 +7104,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8747797351010048473}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -0.7, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1135946306582699105}
   m_Father: {fileID: 2053887048517904316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &8616802077763268419
 Animator:
   serializedVersion: 5
@@ -7416,6 +7147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOpenClip: {fileID: 8300000, guid: 5f81cabf59f72ad469cc5da0e03112ff, type: 3}
   doorCloseClip: {fileID: 8300000, guid: 4ae37021d22df7b4184f6aa86b11f132, type: 3}
+  triggerVariable: toggleDoor
 --- !u!82 &3794333514500808780
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7437,7 +7169,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -7732,7 +7464,7 @@ GameObject:
   - component: {fileID: 6013450649953305488}
   - component: {fileID: 9120284649247291662}
   - component: {fileID: 7754704071505587703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

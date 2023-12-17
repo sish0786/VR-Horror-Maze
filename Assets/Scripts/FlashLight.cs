@@ -12,12 +12,14 @@ public class FlashLight : MonoBehaviour
     private Material lens;
     private Material bulb;
 
+    public Light pointLight;
+
     void Start()
     {
         Renderer renderer = GetComponent<Renderer>();
         lens = renderer.materials[1];
         bulb = renderer.materials[3];
-
+        pointLight.enabled = false;
         spotlight = GetComponentInChildren<Light>();
 
         interactable  = GetComponent<XRGrabInteractable>();
@@ -32,6 +34,7 @@ public class FlashLight : MonoBehaviour
 
     public void OnGrab(ActivateEventArgs args)
     {
+        pointLight.enabled = false;
         Debug.Log("Entered Ongrab");
         if (!isFlashlightOn)
         {
@@ -42,7 +45,6 @@ public class FlashLight : MonoBehaviour
             TurnOffFlashlight();
         }
     }
-
     private void TurnOnFlashlight()
     {
         switchSound.Play();
@@ -62,4 +64,18 @@ public class FlashLight : MonoBehaviour
  
     }
 
+    public void DropFlashlight()
+    {
+        // Enable the point light
+        pointLight.enabled = true;
+
+        // Add more effects if needed
+    }
+    public void TurnOffFlashIndicator()
+    {
+        // Enable the point light
+        pointLight.enabled = false;
+
+        // Add more effects if needed
+    }
 }
