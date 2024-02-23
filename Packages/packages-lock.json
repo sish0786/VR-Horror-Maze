@@ -219,17 +219,17 @@
       "url": "https://packages.unity.com"
     },
     "edu.ucf.varlab.multidisplayvr": {
-      "version": "file:C:/Users/sh236368/Downloads/edu.ucf.varlab.multidisplayvr-3.3.0/package",
+      "version": "file:edu.ucf.varlab.multidisplayvr-3.3.0.tgz",
       "depth": 0,
-      "source": "local",
+      "source": "local-tarball",
       "dependencies": {
         "edu.ucf.varlab.utility": "3.0.0"
       }
     },
     "edu.ucf.varlab.utility": {
-      "version": "file:C:/Users/sh236368/Downloads/edu.ucf.varlab.utility-3.0.0/package",
+      "version": "file:edu.ucf.varlab.utility-3.0.0.tgz",
       "depth": 0,
-      "source": "local",
+      "source": "local-tarball",
       "dependencies": {}
     },
     "com.unity.modules.ai": {
