@@ -1,0 +1,151 @@
+{
+    "system": {
+        "overrideClipPlanes": false,
+        "nearClipPlane": 0.0,
+        "farClipPlane": 0.0,
+        "defaultHeadPositionX": 0.0,
+        "defaultHeadPositionY": 1.7000000476837159,
+        "defaultHeadPositionZ": 0.0
+    },
+    "users": [
+        {
+            "name": "User Alpha",
+            "headPoseActionSet": "MultiDisplayVR",
+            "headPoseAction": "HeadTracker",
+            "headPoseSource": "Chest",
+            "defaultHeadPositionX": 0.0,
+            "defaultHeadPositionY": 1.7000000476837159,
+            "defaultHeadPositionZ": 0.0,
+            "overrideClipPlanes": false,
+            "nearClipPlane": 0.0,
+            "farClipPlane": 0.0,
+            "interpupillaryDistance": 0.06300000101327896,
+            "eyeCenterOffsetX": 0.0,
+            "eyeCenterOffsetY": -0.13,
+            "eyeCenterOffsetZ": 0.17,
+            "eyeCenterRotationX": 9.0,
+            "eyeCenterRotationY": 0.0,
+            "eyeCenterRotationZ": 0.0
+        }
+    ],
+    "renderViews": [
+        {
+            "name": "RV Front",
+            "stereoModeValue": "SideBySide",
+            "sizeX" : 2.25,
+            "sizeY" : 2.25,
+            "centerX" : 0.0,
+            "centerY" : 1.125,
+            "centerZ" : 1.125,
+            "normalX" : 0.0,
+            "normalY" : 0.0,
+            "normalZ" : 1.0,
+            "upX" : 0.0,
+            "upY" : 1.0,
+            "upZ" : 0.0,
+            "renderResolutionX": 1920,
+            "renderResolutionY": 1200
+        },
+        {
+            "name": "RV Left",
+            "stereoModeValue": "SideBySide",
+            "sizeX" : 2.25,
+            "sizeY" : 2.25,
+            "centerX" : -1.125,
+            "centerY" : 1.125,
+            "centerZ" : 0.0,
+            "normalX" : -1.0,
+            "normalY" : 0.0,
+            "normalZ" : 0.0,
+            "upX" : 0.0,
+            "upY" : 1.0,
+            "upZ" : 0.0,
+            "renderResolutionX": 1920,
+            "renderResolutionY": 1200
+        },
+        {
+            "name": "RV Right",
+            "stereoModeValue": "SideBySide",
+            "sizeX" : 2.25,
+            "sizeY" : 2.25,
+            "centerX" : 1.125,
+            "centerY" : 1.125,
+            "centerZ" : 0.0,
+            "normalX" : 1.0,
+            "normalY" : 0.0,
+            "normalZ" : 0.0,
+            "upX" : 0.0,
+            "upY" : 1.0,
+            "upZ" : 0.0,
+            "renderResolutionX": 1920,
+            "renderResolutionY": 1200
+        },
+        {
+            "name": "RV Floor",
+            "stereoModeValue": "SideBySide",
+            "sizeX" : 2.25,
+            "sizeY" : 2.25,
+            "centerX" : 0.0,
+            "centerY" : 0.0,
+            "centerZ" : 0.0,
+            "normalX" : 0.0,
+            "normalY" : -1.0,
+            "normalZ" : 0.0,
+            "upX" : 0.0,
+            "upY" : 0.0,
+            "upZ" : 1.0,
+            "renderResolutionX": 1920,
+            "renderResolutionY": 1200
+        }
+    ],
+    "displayScreens": [
+        {
+            "name": "DS Front",
+            "sourceRenderViewName": "RV Front",
+            "sourceRectangle": {
+                "offsetModeValue": "Pixel",
+                "sizeModeValue": "Pixel",
+                "offsetX": 0.0,
+                "offsetY": 0.0,
+                "sizeX": 1920.0,
+                "sizeY": 1200.0
+            }
+        },
+        {
+            "name": "DS Left",
+            "sourceRenderViewName": "RV Left",
+            "sourceRectangle": {
+                "offsetModeValue": "Pixel",
+                "sizeModeValue": "Pixel",
+                "offsetX": 0.0,
+                "offsetY": 0.0,
+                "sizeX": 1920.0,
+                "sizeY": 1200.0
+            }
+        },
+        {
+            "name": "DS Right",
+            "sourceRenderViewName": "RV Right",
+            "sourceRectangle": {
+                "offsetModeValue": "Pixel",
+                "sizeModeValue": "Pixel",
+                "offsetX": 0.0,
+                "offsetY": 0.0,
+                "sizeX": 1920.0,
+                "sizeY": 1200.0
+            }
+        },
+        {
+            "name": "DS Floor",
+            "sourceRenderViewName": "RV Floor",
+            "sourceRectangle": {
+                "offsetModeValue": "Pixel",
+                "sizeModeValue": "Pixel",
+                "offsetX": 0.0,
+                "offsetY": 0.0,
+                "sizeX": 1920.0,
+                "sizeY": 1200.0
+            }
+        }
+    ]
+}

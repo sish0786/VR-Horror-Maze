@@ -24,12 +24,12 @@ TagManager:
   - UI
   - Player
   - Interactable
-  - IgnoreFlash
-  - Post Processing
+  - LeftEyeOnly
+  - RightEyeOnly
   - Obstacles
   - Drawer
-  - 
-  - 
+  - IgnoreFlash
+  - Post Processing
   - 
   - 
   - 

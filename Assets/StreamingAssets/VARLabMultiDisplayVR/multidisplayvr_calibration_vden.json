@@ -1,0 +1,143 @@
+{
+    "trackingOrigin": {
+        "statusValue": "Valid",
+        "positionX": 0.0,
+        "positionY": 0.0,
+        "positionZ": -0.05000010132789612,
+        "rotationX": 0.0,
+        "rotationY": 0.0,
+        "rotationZ": 0.0
+    },
+    "warpSettings": [
+        {
+            "name": "Warp Front",
+            "unityDisplayIndex": 0,
+            "invertEyes": false,
+            "warpModeValue": "MultiHomography",
+            "halfResolutionX": 16,
+            "halfResolutionY": 16,
+            "controlPoints": {
+                "topLeftX": -1.0,
+                "topLeftY": 1.0,
+                "topX": 0.0,
+                "topY": 1.0,
+                "topRightX": 1.0,
+                "topRightY": 1.0,
+                "leftX": -1.0,
+                "leftY": 0.0,
+                "centerX": 0.0,
+                "centerY": 0.0,
+                "rightX": 1.0,
+                "rightY": 0.0,
+                "bottomLeftX": -1.0,
+                "bottomLeftY": -1.0,
+                "bottomX": 0.0,
+                "bottomY": -1.0,
+                "bottomRightX": 1.0,
+                "bottomRightY": -1.0
+            }
+        },
+        {
+            "name": "Warp Left",
+            "unityDisplayIndex": 1,
+            "invertEyes": false,
+            "warpModeValue": "MultiHomography",
+            "halfResolutionX": 16,
+            "halfResolutionY": 16,
+            "controlPoints": {
+                "topLeftX": -1.0,
+                "topLeftY": 1.0,
+                "topX": 0.0,
+                "topY": 1.0,
+                "topRightX": 1.0,
+                "topRightY": 1.0,
+                "leftX": -1.0,
+                "leftY": 0.0,
+                "centerX": 0.0,
+                "centerY": 0.0,
+                "rightX": 1.0,
+                "rightY": 0.0,
+                "bottomLeftX": -1.0,
+                "bottomLeftY": -1.0,
+                "bottomX": 0.0,
+                "bottomY": -1.0,
+                "bottomRightX": 1.0,
+                "bottomRightY": -1.0
+            }
+        },
+        {
+            "name": "Warp Right",
+            "unityDisplayIndex": 2,
+            "invertEyes": false,
+            "warpModeValue": "MultiHomography",
+            "halfResolutionX": 16,
+            "halfResolutionY": 16,
+            "controlPoints": {
+                "topLeftX": -0.9340000152587891,
+                "topLeftY": 0.9180000424385071,
+                "topX": 0.0,
+                "topY": 0.9580000638961792,
+                "topRightX": 0.9340000152587891,
+                "topRightY": 0.9660000205039978,
+                "leftX": -0.9180000424385071,
+                "leftY": 0.0,
+                "centerX": 0.0,
+                "centerY": 0.0,
+                "rightX": 1.0,
+                "rightY": 0.0,
+                "bottomLeftX": -0.9580000638961792,
+                "bottomLeftY": -0.9380000233650208,
+                "bottomX": 0.0,
+                "bottomY": -0.956000030040741,
+                "bottomRightX": 0.9480000734329224,
+                "bottomRightY": -0.9420000314712524
+            }
+        },
+        {
+            "name": "Warp Floor",
+            "unityDisplayIndex": 3,
+            "invertEyes": false,
+            "warpModeValue": "MultiHomography",
+            "halfResolutionX": 16,
+            "halfResolutionY": 16,
+            "controlPoints": {
+                "topLeftX": -1.0,
+                "topLeftY": 1.0,
+                "topX": 0.0,
+                "topY": 1.0,
+                "topRightX": 1.0,
+                "topRightY": 1.0,
+                "leftX": -1.0,
+                "leftY": 0.0,
+                "centerX": 0.0,
+                "centerY": 0.0,
+                "rightX": 1.0,
+                "rightY": 0.0,
+                "bottomLeftX": -1.0,
+                "bottomLeftY": -1.0,
+                "bottomX": 0.0,
+                "bottomY": -1.0,
+                "bottomRightX": 1.0,
+                "bottomRightY": -1.0
+            }
+        }
+    ],
+    "outputMappings": [
+        {
+            "displayScreenName": "DS Front",
+            "warpSettingsName": "Warp Front"
+        },
+        {
+            "displayScreenName": "DS Left",
+            "warpSettingsName": "Warp Left"
+        },
+        {
+            "displayScreenName": "DS Right",
+            "warpSettingsName": "Warp Right"
+        },
+        {
+            "displayScreenName": "DS Floor",
+            "warpSettingsName": "Warp Floor"
+        }
+    ]
+}
